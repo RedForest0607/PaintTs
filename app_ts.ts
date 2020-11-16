@@ -1,5 +1,6 @@
 //PaintJS in TypeScript
 
+//              html요소를 가져오는경우, 다음과 같은 태그를 붙여준다
 const canvas = <HTMLCanvasElement> document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
@@ -75,3 +76,4 @@ if(brushSize){
 
 //자식들에 게 각각의 이벤트 리스너를 만들어준다
 Array.from('colors').forEach(color=> addEventListener("click",changeColor));
+//                                   배열의 요소를 선택하지 않고 바로 이벤트 리스너로 넘어간다.
