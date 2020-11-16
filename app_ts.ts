@@ -1,3 +1,5 @@
+//PaintJS in TypeScript
+
 const canvas = <HTMLCanvasElement> document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
@@ -11,13 +13,14 @@ canvas.height = 700;
 ctx.strokeStyle = "#2c2c2c";
 ctx.lineWidth = 2.5;
 
+let painting = false;
+
 function startPainting(){
     painting = true;
 }
-
-let painting = false;
-
-
+interface ArrayConstructor{
+    from(arrayLike: any, mapFn?, thisArg?): Array<any>;
+}
 //마우스 좌표 가져옴
 function onMouseMove(event){
     const x = event.offsetX; //client좌표는 전체 윈도우에 대한 좌표, offset은 내부에 대한 좌표
@@ -71,4 +74,4 @@ if(brushSize){
 }
 
 //자식들에 게 각각의 이벤트 리스너를 만들어준다
-Array.from(colors).forEach(color=> color.addEventListener("click",changeColor));
+Array.from('colors').forEach(color=> addEventListener("click",changeColor));

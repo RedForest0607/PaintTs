@@ -1,3 +1,4 @@
+//PaintJS in TypeScript
 var canvas = document.getElementById("jsCanvas");
 var ctx = canvas.getContext("2d");
 var colors = document.getElementsByClassName("jsColor");
@@ -9,10 +10,10 @@ canvas.height = 700;
 //선의 해상도에 대한 공부가 필요할듯
 ctx.strokeStyle = "#2c2c2c";
 ctx.lineWidth = 2.5;
+var painting = false;
 function startPainting() {
     painting = true;
 }
-var painting = false;
 //마우스 좌표 가져옴
 function onMouseMove(event) {
     var x = event.offsetX; //client좌표는 전체 윈도우에 대한 좌표, offset은 내부에 대한 좌표
@@ -62,4 +63,4 @@ if (brushSize) {
     brushSize.addEventListener("input", changeBrushSize);
 }
 //자식들에 게 각각의 이벤트 리스너를 만들어준다
-Array.from(colors).forEach(function (color) { return color.addEventListener("click", changeColor); });
+Array.from('colors').forEach(function (color) { return addEventListener("click", changeColor); });
